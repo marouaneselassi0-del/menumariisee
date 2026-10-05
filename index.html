@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marisse Café & Crêpes</title>
+<script>
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("pageshow", function () {
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+  window.scrollTo(0, 0);
+
+  setTimeout(function () {
+    window.scrollTo(0, 0);
+  }, 100);
+});
+</script>
+<style>
+  /* ===== FIX BACKGROUND ===== */
+/* Flèche retour en haut */
+#backToTop,
+.back-to-top,
+.scroll-to-top,
+.scroll-top {
+    background: #D4AF37 !important;
+    color: white !important;
+    border: 2px solid #D4AF37 !important;
+}
+
+#backToTop:hover,
+.back-to-top:hover,
+.scroll-to-top:hover,
+.scroll-top:hover {
+    background: #B8941F !important;
+}
+html, body {
+    background: #163d2f !important;
+    background-image: none !important;
+    background-color: #163d2f !important;
+}
+button[onclick*="top"],
+button[onclick*="scroll"],
+a[onclick*="top"],
+a[onclick*="scroll"] {
+    background-color: #D4AF37 !important;
+    color: white !important;
+    border-color: #D4AF37 !important;
+}
+/* bach sections ma y3awdouch background */
+header,
+main,
+section,
+.products,
+.drinks {
+    background-repeat: no-repeat !important;
+}
+
+:root{
+  --green:#303823;
+  --green2:#465038;
+  --gold:#d2a452;
+  --cream:#f8f3e8;
+  --text:#171713;
+}
+
+@media (max-width: 600px) {
+  #jus .products {
+    display: grid !important;
+    grid-template-columns: repeat(2, 150px) !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  @media (max-width: 600px) {
+
+  .products {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    padding: 0 9px !important;
+  }
+
+  .products .card {
+    width: 100% !important;
+    height: 240px !important;
+    min-height: 240px !important;
+    max-height: 240px !important;
+
+    background: #fff !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    transform: none !important;
+    zoom: 1 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* PHOTO */
+  .products .card > img {
+    width: 100% !important;
+    height: 170px !important;
+    min-height: 170px !important;
+    max-height: 170px !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* SMYA + PRIX */
+  .products .card .info {
+    width: 100% !important;
+    height: 70px !important;
+    min-height: 70px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 2px 0 6px !important;
+
+    box-sizing: border-box !important;
+  }
+
+  .products .card .name {
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: center !important;
+    line-height: 1.1 !important;
+  }
+
+  .products .card .price {
+    position: static !important;
+
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    display: block !important;
+    width: fit-content !important;
+
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+}
+
+  #jus .card {
+    width: 150px !important;
+    height: 210px !important;
+  }
+.products .card .info {
+  height: 75px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 0 0 8px 0 !important;
+}
+
+.products .card .name {
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.products .card .price {
+  position: static !important;
+  margin: 0 auto !important;
+  transform: none !important;
+}
+  #jus .card img {
+    width: 100% !important;
+    height: 145px !important;
+    object-fit: contain !important;
+  }
+}
+#jus .card img {
+  width: 75% !important;
+  height: 130px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 10px auto !important;
+}
+@media (max-width: 600px) {
+  .products {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .card {
+    width: 100% !important;
+    height: 280px !important;
+    zoom: 1 !important;
+    transform: none !important;
+  }
+
+  .card img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+  }
+  .products .card .info {
+  height: 75px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 0 0 8px 0 !important;
+}
+
+.products .card .name {
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.products .card .price {
+  position: static !important;
+  margin: 0 auto !important;
+  transform: none !important;
+}
+}
+@media (max-width: 600px) {
+
+  #jus .products {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  #jus .card {
+    width: 100% !important;
+    height: 280px !important;
+    padding: 0 !important;
+    transform: none !important;
+    zoom: 1 !important;
+  }
+
+  #jus .card img {
+    width: 100% !important;
+    height: 210px !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+  }
+}
+@media (max-width: 600px) {
+
+  #jus .products {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  #jus .card {
+    width: 100% !important;
+    height: 280px !important;
+    padding: 0 !important;
+    transform: none !important;
+    zoom: 1 !important;
+  }
+
+  #jus .card img {
+    width: 100% !important;
+    height: 210px !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+  }
+}
+#jus .price {
+  display: block !important;
+  width: fit-content !important;
+  margin: 8px auto 0 auto !important;
+  text-align: center !important;
+}
+#jus .info {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding-bottom: 15px !important;
+}
+
+#jus .price {
+  position: static !important;
+  transform: none !important;
+  margin: 0 auto !important;
+}
+#jus .price {
+  position: relative !important;
+  top: -18px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  width: fit-content !important;
+}
+#jus .price {
+  position: relative !important;
+  top: -18px !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  display: table !important;
+  margin: 0 auto !important;
+}
+#jus .name {
+  margin-bottom: 10px !important;
+}
+#jus .name {
+  margin: 0 0 18px 0 !important;
+}
+
+#jus .price {
+  top: 0 !important;
+  margin: 0 auto !important;
+}
+@media (max-width: 600px) {
+
+  .products {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    padding: 0 10px !important;
+  }
+
+  .products .card {
+    width: 100% !important;
+    height: 355px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #fff !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    zoom: 1 !important;
+  }
+
+  .products .card > img {
+    width: 100% !important;
+    height: 255px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .products .card .info {
+    width: 100% !important;
+    height: 100px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .products .card .name {
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .products .card .price {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: fit-content !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+}
+/* ===== GA3 LES CARDS: NFS L3BAR, MACHY TWAL ===== */
+@media (max-width: 600px) {
+
+  .products {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    padding: 0 10px !important;
+  }
+
+  .products .card {
+    width: 100% !important;
+    height: 270px !important;
+    min-height: 270px !important;
+    max-height: 270px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .products .card > img {
+    width: 100% !important;
+    height: 195px !important;
+    min-height: 195px !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+  }
+
+  .products .card .info {
+    width: 100% !important;
+    height: 75px !important;
+    min-height: 75px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .products .card .name {
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  .products .card .price {
+    position: static !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    width: fit-content !important;
+    text-align: center !important;
+  }
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+@media (max-width: 600px) {
+
+  .menu-item img {
+    width: 75% !important;
+    height: 150px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 5px auto !important;
+  }
+
+}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--text);
+  background:
+  
+    radial-gradient(circle at top,#596147 0%,#37402c 35%,#242b1d 100%);
+}
+@media (max-width: 600px) {
+  .menu-grid {
+    transform: scale(0.75) !important;
+    transform-origin: top center !important;
+    width: 133.33% !important;
+    margin-left: -16.66% !important;
+    margin-bottom: -25% !important;
+  }
+}
+@media (max-width: 600px) {
+  .menu-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    padding: 0 20px !important;
+  }
+
+  .menu-item {
+    width: 100% !important;
+    height: 230px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+
+  .menu-item img {
+    width: 100% !important;
+    height: 155px !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+  }
+
+  .menu-item h3,
+  .menu-item h4,
+  .menu-item p {
+    margin: 3px 0 !important;
+  }
+}
+@media (max-width: 600px) {
+  .menu-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .menu-item {
+    width: 100% !important;
+    max-width: none !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  .menu-item img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+}
+/* KBER LOGO */
+.logo {
+    width: 190px !important;
+    max-width: 55% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 10px auto 15px !important;
+}
+
+header img,
+.hero img,
+.logo img,
+img[src*="LOGO"],
+img[src*="logo"] {
+    width: 220px !important;
+    max-width: 70% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 10px !important;
+    transform: scale(1.4) !important;
+    transform-origin: center center !important;
+}
+@media (max-width: 600px) {
+    .logo {
+        width: 180px !important;
+        max-width: 55% !important;
+        height: auto !important;
+    }
+}
+/* KBER LOGO */
+.logo {
+    width: 190px !important;
+    max-width: 55% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 10px auto 15px !important;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        width: 180px !important;
+        max-width: 55% !important;
+        height: auto !important;
+    }
+}
+/* FIX BACKGROUND MOBILE */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100% !important;
+}
+
+body {
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+}
+
+@media (max-width: 600px) {
+    body {
+        background-size: 100% auto !important;
+        background-position: top center !important;
+        background-repeat: repeat-y !important;
+        background-attachment: scroll !important;
+    }
+}
+/* BACKGROUND WA7DA - MA T3AWEDCH */
+html {
+    min-height: 100%;
+    background-color: #183b29;
+}
+
+body {
+    min-height: 100vh !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: top center !important;
+    background-attachment: fixed !important;
+}
+
+@media (max-width: 600px) {
+    body {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: top center !important;
+        background-attachment: fixed !important;
+    }
+}
+/* BACKGROUND WA7DA - MA T3AWEDCH */
+html {
+    min-height: 100%;
+    background-color: #183b29;
+}
+
+body {
+    min-height: 100vh !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: top center !important;
+    background-attachment: fixed !important;
+}
+
+@media (max-width: 600px) {
+    body {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: top center !important;
+        background-attachment: fixed !important;
+    }
+}/* BACKGROUND WA7DA - MA T3AWEDCH */
+html {
+    min-height: 100%;
+    background-color: #183b29;
+}
+
+body {
+    min-height: 100vh !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: top center !important;
+    background-attachment: fixed !important;
+}
+
+@media (max-width: 600px) {
+    body {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: top center !important;
+        background-attachment: fixed !important;
+    }
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+
+    background-image: url("images/bg42.jpeg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}
+.logo{
+    margin-bottom: -20px !important;
+}
+/* ===== TEXTE PLUS VISIBLE ===== */
+
+body{
+    font-weight: 600;
+}
+
+/* Marisse Café & Crêpes */
+header h1{
+    font-weight: 900 !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,.65);
+}
+
+/* GOOD FOOD • GOOD COFFEE • GOOD MOOD */
+.tagline{
+    font-weight: 900 !important;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 6px rgba(0,0,0,.8);
+}
+
+/* ===== CATÉGORIES ===== */
+
+.categories,
+.category-nav,
+nav{
+    gap: 10px !important;
+}
+
+.categories a,
+.category-nav a,
+nav a{
+    font-weight: 900 !important;
+    font-size: 16px !important;
+    color: #fff8e8 !important;
+
+    border: 2px solid #d2a452 !important;
+    background: rgba(15, 55, 38, 0.82) !important;
+
+    padding: 12px 18px !important;
+    border-radius: 30px !important;
+
+    text-shadow: 0 1px 4px rgba(0,0,0,.8);
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+/* catégorie active */
+.categories a.active,
+.category-nav a.active,
+nav a.active{
+    background: #d2a452 !important;
+    color: #173b2a !important;
+    font-weight: 900 !important;
+}
+
+/* Titres: Crêpes, Boissons... */
+section h2,
+.section-title{
+    font-weight: 900 !important;
+    text-shadow: 0 2px 7px rgba(0,0,0,.7);
+}
+
+/* Noms des produits */
+.card h3,
+.product-card h3{
+    font-weight: 900 !important;
+    color: #171713 !important;
+}
+
+/* Prix */
+.price{
+    font-weight: 900 !important;
+}
+
+/* ===== TELEPHONE ===== */
+
+@media (max-width: 600px){
+
+    .categories,
+    .category-nav,
+    nav{
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 9px !important;
+    }
+
+    .categories a,
+    .category-nav a,
+    nav a{
+        font-size: 15px !important;
+        font-weight: 900 !important;
+        padding: 11px 16px !important;
+    }
+}
+
+
+header h1{
+    margin-top: 0 !important;
+}
+/* FIX HEADER MOBILE */
+@media (max-width: 600px){
+
+    header{
+        padding-top: 20px !important;
+        padding-bottom: 15px !important;
+    }
+
+    header .logo{
+        width: 190px !important;
+        max-width: none !important;
+        margin: 0 auto -35px auto !important;
+        display: block !important;
+    }
+
+    header h1{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+
+/* ===== HEADER ===== */
+
+header{
+  text-align:center;
+  padding:35px 15px 28px;
+}
+.logo{
+    margin-bottom: -20px !important;
+}
+
+header h1{
+    margin-top: 0 !important;
+}
+
+.logo{
+  width:180px;
+  max-width:55%;
+  display:block;
+  margin:0 auto 15px;
+  border-radius:20px;
+}
+
+header h1{
+  font-family:Georgia,serif;
+  font-size:37px;
+  color:#e2b55f;
+  margin:5px 0;
+}
+
+.subtitle{
+  color:#f8f2df;
+  font-size:11px;
+  letter-spacing:5px;
+  margin:18px 0 28px;
+}
+/* ===== CATEGORIES RESPONSIVE TELEPHONE ===== */
+@media (max-width: 650px){
+
+  .categories{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:10px;
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+    padding:5px 10px 15px;
+    overflow:visible;
+  }
+
+  /* 3 catégories lfo9 */
+  .categories a:nth-child(1),
+  .categories a:nth-child(2),
+  .categories a:nth-child(3){
+    grid-column:span 2;
+  }
+
+  /* 2 catégories t7t, centrées */
+  .categories a:nth-child(4){
+    grid-column:2 / span 2;
+  }
+
+  .categories a:nth-child(5){
+    grid-column:4 / span 2;
+  }
+
+  .categories a{
+    width:100%;
+    min-width:0;
+    padding:10px 5px;
+    font-size:12px;
+    text-align:center;
+    white-space:nowrap;
+    border-radius:25px;
+  }
+}
+@media (max-width: 650px) {
+
+  .categories {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 430px !important;
+    margin: 25px auto 45px !important;
+    padding: 0 10px !important;
+    overflow: visible !important;
+  }
+
+  .categories a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 0 !important;
+    padding: 10px 3px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+
+  .categories a:nth-child(1),
+  .categories a:nth-child(2),
+  .categories a:nth-child(3) {
+    grid-column: span 2 !important;
+  }
+
+  .categories a:nth-child(4) {
+    grid-column: 2 / span 2 !important;
+  }
+
+  .categories a:nth-child(5) {
+    grid-column: 4 / span 2 !important;
+  }
+}
+@media (max-width: 650px) {
+  .categories {
+    margin-bottom: 12px !important;
+  }
+
+  #crepes {
+    padding-top: 20px !important;
+  }
+}
+/* LOGO + MARISSE QRAB L B3DIYATHOM */
+.logo {
+    margin-bottom: 5px !important;
+}
+
+.logo img {
+    width: 150px !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto !important;
+}
+
+/* Marisse Café & Crêpes */
+.hero h1 {
+    margin-top: 5px !important;
+    margin-bottom: 12px !important;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .logo {
+        margin-bottom: 0 !important;
+    }
+
+    .logo img {
+        width: 150px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .hero h1 {
+        margin-top: 0 !important;
+    }
+}
+@media (max-width: 650px) {
+  .logo {
+    width: 230px !important;
+    max-width: 75% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 15px !important;
+  }
+}
+.hero h1 {
+    margin-top: 0 !important;
+}
+
+/* ===== CATEGORIES ===== */
+/* LOGO + MARISSE QRAB L B3DIYATHOM */
+.logo {
+    margin-bottom: 5px !important;
+}
+
+.logo img {
+    width: 150px !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto !important;
+}
+
+/* Marisse Café & Crêpes */
+.hero h1 {
+    margin-top: 5px !important;
+    margin-bottom: 12px !important;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .logo {
+        margin-bottom: 0 !important;
+    }
+
+    .logo img {
+        width: 150px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .hero h1 {
+        margin-top: 0 !important;
+    }
+}
+.categories{
+  display:flex;
+  overflow-x:auto;
+  gap:10px;
+  padding:5px 10px 15px;
+  max-width:1000px;
+  margin:auto;
+  scrollbar-width:none;
+}
+
+.categories::-webkit-scrollbar{
+  display:none;
+}
+
+.categories a{
+  flex:0 0 auto;
+  text-decoration:none;
+  color:#fff8e8;
+  border:1.5px solid var(--gold);
+  border-radius:30px;
+  padding:12px 19px;
+  font-weight:600;
+  font-size:14px;
+}
+
+.categories a:first-child{
+  background:var(--gold);
+  color:#171713;
+}
+
+/* ===== MAIN ===== */
+
+main{
+  max-width:1050px;
+  margin:auto;
+  padding:0 14px 70px;
+}
+
+section{
+  padding-top:42px;
+  scroll-margin-top:10px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.section-title h2{
+  font-family:Georgia,serif;
+  color:#e2b55f;
+  font-size:42px;
+  margin:0;
+}
+
+.section-title p{
+  color:#f4edda;
+  font-size:10px;
+  letter-spacing:5px;
+  margin:10px 0;
+}
+
+.decor{
+  width:160px;
+  height:1px;
+  background:var(--gold);
+  margin:13px auto;
+  opacity:.8;
+}
+
+/* ===== CARDS ===== */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:var(--cream);
+  border-radius:19px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,.24);
+  border:2px solid rgba(255,255,255,.8);
+}
+
+.card img{
+  width:100%;
+  aspect-ratio:1.35/1;
+  object-fit:cover;
+  display:block;
+}
+
+.info{
+  text-align:center;
+  padding:12px 8px 14px;
+}
+
+.name{
+  font-weight:800;
+  font-size:17px;
+  margin-bottom:10px;
+}
+
+.price{
+  display:inline-block;
+  background:linear-gradient(90deg,#b88632,#d7aa57);
+  color:white;
+  font-weight:bold;
+  padding:7px 20px;
+  border-radius:25px;
+  min-width:95px;
+}
+
+/* ===== SMALL DRINK CARDS ===== */
+
+.drinks{
+  grid-template-columns:repeat(5,1fr);
+}
+
+.drinks .card img{
+  aspect-ratio:1/1;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+  text-align:center;
+  color:#caa52a;
+  padding:35px 15px;
+  border-top:6px solid rgba(210,164,82,.35);
+  letter-spacing:3px;
+  font-size:20px;
+}
+
+.top{
+  position:fixed;
+  right:17px;
+  bottom:20px;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:var(--cream);
+  color:#8d682d;
+  border:1px solid var(--gold);
+  font-size:23px;
+}
+/* ===== AJUSTEMENT MOBILE FINAL ===== */
+@media (max-width: 650px) {
+
+  /* Header ma يبقاش عالي بزاف */
+  header {
+    padding-top: 15px !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* Logo أكبر */
+  .logo {
+    width: 260px !important;
+    max-width: 85% !important;
+    height: auto !important;
+    margin: 0 auto 5px !important;
+    display: block !important;
+  }
+
+  /* Marisse Café & Crêpes */
+  header h1 {
+    font-size: 31px !important;
+    margin: 8px 0 5px !important;
+  }
+
+  /* GOOD FOOD... */
+  .subtitle {
+    margin: 12px 0 18px !important;
+  }
+
+  /* catégories أكبر */
+  .categories {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+
+    width: 100% !important;
+    max-width: 430px !important;
+
+    gap: 9px !important;
+    padding: 0 8px !important;
+
+    margin: 0 auto 10px !important;
+
+    overflow: visible !important;
+  }
+
+  .categories a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 0 !important;
+    width: auto !important;
+
+    padding: 12px 5px !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+
+    border-radius: 25px !important;
+    white-space: nowrap !important;
+  }
+
+  /* 3 boutons fo9 */
+  .categories a:nth-child(1),
+  .categories a:nth-child(2),
+  .categories a:nth-child(3) {
+    grid-column: span 2 !important;
+  }
+
+  /* 2 boutons t7t */
+  .categories a:nth-child(4) {
+    grid-column: 2 / span 2 !important;
+  }
+
+  .categories a:nth-child(5) {
+    grid-column: 4 / span 2 !important;
+  }
+
+  /* N9arbo titre Crêpes l menu */
+  #crepes {
+    padding-top: 25px !important;
+  }
+
+  .section-title {
+    margin-bottom: 18px !important;
+  }
+
+  .section-title h2 {
+    font-size: 38px !important;
+  }
+
+  /* Cards أكبر شوية */
+  main {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 9px !important;
+  }
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:650px){
+
+  header{
+    padding-top:25px;
+  }
+
+  .logo{
+    width:150px;
+  }
+
+  header h1{
+    font-size:31px;
+  }
+
+  .subtitle{
+    font-size:9px;
+    letter-spacing:3px;
+  }
+
+  .categories{
+    justify-content:flex-start;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:11px;
+  }
+
+  .drinks{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .section-title h2{
+    font-size:36px;
+  }
+
+  .name{
+    font-size:15px;
+  }
+
+  .price{
+    font-size:14px;
+    min-width:80px;
+    padding:6px 14px;
+  }
+
+  .card{
+    border-radius:16px;
+  }
+  
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img src="images/logo20.png" class="logo" alt="Marisse Café & Crêpes">
+
+<h1>Marisse Café & Crêpes</h1>
+
+<div class="decor"></div>
+
+<p class="subtitle">
+GOOD FOOD • GOOD COFFEE • GOOD MOOD
+</p>
+
+<nav class="categories">
+<a href="#crepes">🥞 Crêpes</a>
+<a href="#boissons">☕ Boissons</a>
+<a href="#jus">🥤 Jus</a>
+<a href="#milkshakes">🥛 Milkshakes</a>
+<a href="#cocktails">🍸 Cocktails</a>
+</nav>
+
+</header>
+
+<main>
+
+<!-- ================= CREPES ================= -->
+
+<section id="crepes">
+
+<div class="section-title">
+<h2>Crêpes</h2>
+
+<div class="decor"></div>
+</div>
+
+<div class="products">
+
+<div class="card">
+<img src="images/1.jpeg">
+<div class="info">
+<div class="name">Nutella</div>
+<div class="price">15 DH</div>
+</div>
+</div>
+
+<div class="card">
+<img src="images/2.jpeg">
+<div class="info">
+<div class="name">Nutella Banane</div>
+<div class="price">18 DH</div>
+</div>
+</div>
+
+<div class="card">
+<img src="images/4.jpeg">
+<div class="info">
+<div class="name">Marisse</div>
+<div class="price">25 DH</div>
+</div>
+</div>
+
+<div class="card">
+<img src="images/5.jpeg">
+<div class="info">
+<div class="name">Nutella Oreo</div>
+<div class="price">18 DH</div>
+</div>
+</div>
+
+<div class="card">
+<img src="images//6.jpeg">
+<div class="info">
+<div class="name">Nutella Lotus</div>
+<div class="price">20 DH</div>
+</div>
+</div>
+
+<div class="card">
+<img src="images/3.jpeg">
+<div class="info">
+<div class="name">Pistache Konafa</div>
+<div class="price">25 DH</div>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= BOISSONS ================= -->
+
+<section id="boissons">
+
+<div class="section-title">
+<h2>Boissons</h2>
+
+<div class="decor"></div>
+</div>
+
+<div class="products drinks">
+
+<div class="card">
+<img src="images/30.jpeg">
+<div class="info"><div class="name">Noir</div><div class="price">7 DH</div></div>
+</div>
+
+<div class="card">
+<img src="images/31.jpeg">
+<div class="info"><div class="name">Atay</div><div class="price">7 DH</div></div>
+</div>
+<div class="card">
+<img src="images/24.jpeg">
+<div class="info"><div class="name">Cafe Creme</div><div class="price">8 DH</div></div>
+</div>
+<div class="card">
+<img src="images/25.jpeg">
+<div class="info"><div class="name">Chocolat Chaud</div><div class="price">8 DH</div></div>
+</div>
+<div class="card">
+<img src="images/27.jpeg">
+<div class="info"><div class="name">Soda</div><div class="price">11 DH</div></div>
+</div>
+<div class="card">
+<img src="images/51.jpeg">
+<div class="info"><div class="name">L'eau </div><div class="price">3 DH</div></div>
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+</section>
+
+
+<!-- ================= JUS ================= -->
+
+<section id="jus">
+
+<div class="section-title">
+<h2>Jus</h2>
+
+<div class="decor"></div>
+</div>
+
+<div class="products">
+
+<div class="card">
+<img src="images/22.jpeg">
+<div class="info"><div class="name">Banane</div><div class="price">13 DH</div></div>
+</div>
+
+<div class="card">
+<img src="images/21.jpeg">
+<div class="info"><div class="name">Orange</div><div class="price">15 DH</div></div>
+</div>
+
+<div class="card">
+<img src="images/20.jpeg">
+<div class="info"><div class="name">Fraise</div><div class="price">17 DH</div></div>
+</div>
+
+<div class="card">
+<img src="images/19.jpeg">
+<div class="info"><div class="name">Avocat</div><div class="price">15 DH</div></div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= MILKSHAKES ================= -->
+
+<section id="milkshakes">
+
+<div class="section-title">
+<h2>Milkshakes</h2>
+
+<div class="decor"></div>
+</div>
+
+<div class="products">
+
+<div class="card">
+<img src="images/15.jpeg">
+<div class="info"><div class="name">Oreo</div><div class="price">20 DH</div></div>
+</div>
+
+<div class="card">
+<img src="images/16.jpeg">
+<div class="info"><div class="name">Lotus</div><div class="price">20 DH</div></div>
+</div>
+
+<div class="card">
+<img src="images/17.jpeg">
+<div class="info"><div class="name">KitKat</div><div class="price">20 DH</div></div>
+</div>
+
+<div class="card">
+<img src="images/18.jpeg">
+<div class="info"><div class="name">Fraise</div><div class="price">20 DH</div></div>
+</div>
+
+<div class="card">
+<img src="images/13.jpeg">
+<div class="info"><div class="name">Caramel</div><div class="price">20 DH</div></div>
+</div>
+
+<div class="card">
+<img src="images/14.jpeg">
+<div class="info"><div class="name">Nutella</div><div class="price">20 DH</div></div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= COCKTAILS ================= -->
+
+<section id="cocktails">
+
+<div class="section-title">
+<h2>Cocktails</h2>
+
+<div class="decor"></div>
+</div>
+
+<div class="products">
+
+<div class="card">
+<img src="images/12.jpeg">
+<div class="info"><div class="name">Ruby</div><div class="price">18 DH</div></div>
+</div>
+
+<div class="card">
+<img src="images/10.jpeg">
+<div class="info"><div class="name">Fresh</div><div class="price">16 DH</div></div>
+</div>
+<div class="card">
+<img src="images/11.jpeg">
+<div class="info"><div class="name">Azure </div><div class="price">16 DH</div></div>
+</div>
+
+
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+Taste • Quality • Moments
+Marisse Café & Crêpes 
+</footer>
+
+<button class="top"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+</body>
+</html>
